@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Shouter::Application.config.secret_token = '5230b8d6727606fab4f817671321606a7556644b6eefdeac3b6712fcb1c09eafd0b056fbb24b037ff6829daee87fc801a39af472e127ad999a72f7e9abbb2794'
+Shouter::Application.config.secret_token = 'b21be8020d82739c7820dae0e86695d1cb4131de945391f0da64538e67fc13b1f329b489b48a907bedb0525284c7e9fec2cd2df18b47f2979b0d30c17d364cc6'

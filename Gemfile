@@ -4,7 +4,7 @@ gem 'rails', '3.2.11'
 
 
 gem 'sqlite3'
-gem 'clearance'
+gem 'clearance', '~> 1.0.0.rc4'
 gem 'paperclip', '~> 3.4.0'
 
 group :assets do

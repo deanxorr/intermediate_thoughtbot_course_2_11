@@ -1,4 +1,7 @@
 Shouter::Application.routes.draw do
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'dashboards#show'
+  end
   root to: "home#show", via: :get
 
   resource :dashboard, only: :show
