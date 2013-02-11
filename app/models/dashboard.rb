@@ -3,8 +3,16 @@ class Dashboard
     @user = user
   end
 
+  def user
+    @user
+  end
+
+  def user_email
+    @user.email
+  end
+
   def timeline
-    @user.shouts.reverse_chronological
+    @user.timeline
   end
 
   def new_text_shout

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @shouts = @user.shouts.reverse_chronological
+    @dashboard = Dashboard.new(User.find(params[:id]))
   end
 end

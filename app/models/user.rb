@@ -13,9 +13,13 @@ class User < ActiveRecord::Base
     self_and_user_ids.exclude? user.id
   end
 
+  def timeline
+    Shout.where(user_id: self_and_followed_user_ids).reverse_chronological
+  end
+
   private
 
-  def self_and_user_ids
+  def self_and_followed_user_ids
     [id] + followed_user_ids
   end
 end
