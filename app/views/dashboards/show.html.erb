@@ -1,0 +1,11 @@
+<%= form_for @text_shout do |form| %>
+  <%= form.text_field :body, placeholder: t("compose_shout") %>
+  <%= form.submit t("create_shout") %>
+<% end %>
+<% @shouts.each do |shout| %>
+  <div class='shout'>
+    <div><%= shout.user_email %></div>
+    <div><%= render shout.content %></div>
+    <div><%= time_ago_in_words(shout.created_at) %></div>
+  </div>
+<% end %>
