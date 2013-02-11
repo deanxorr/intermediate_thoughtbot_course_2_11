@@ -2,6 +2,10 @@
   <%= form.text_field :body, placeholder: t("compose_shout") %>
   <%= form.submit t("create_shout") %>
 <% end %>
+<%= form_for @photo_shout do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit t("create_shout") %>
+<% end %>
 <% @shouts.each do |shout| %>
   <div class='shout'>
     <div><%= shout.user_email %></div>
