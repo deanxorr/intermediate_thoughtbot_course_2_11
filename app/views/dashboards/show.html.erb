@@ -1,9 +1,11 @@
 <%= form_for @dashboard.new_text_shout do |form| %>
-  <%= form.text_field :body, placeholder: t("compose_shout") %>
+  <%= form.text_field :body, placeholder: t("compose_shout"), :class => "shout-form-wide" %>
+  Private? <%= form.check_box :private, checked: false, checked_value: true, unchecked_value: false, default: false %>
   <%= form.submit t("create_shout") %>
 <% end %>
 <%= form_for @dashboard.new_photo_shout do |form| %>
-  <%= form.file_field :image %>
+  <%= form.file_field :image, :class => "shout-form-wide" %>
+  Private? <%= form.check_box :private, checked: false, checked_value: true, unchecked_value: false, default: false%>
   <%= form.submit t("create_shout") %>
 <% end %>
 <%= render @dashboard.timeline %>

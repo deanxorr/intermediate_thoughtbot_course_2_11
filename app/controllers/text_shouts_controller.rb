@@ -12,6 +12,6 @@ class TextShoutsController < ApplicationController
 
   def build_shout
     text_shout = TextShout.new(params[:text_shout])
-    current_user.shouts.build(content: text_shout)
+    current_user.shouts.build(content: text_shout, :private => params[:text_shout][:private])
   end
 end

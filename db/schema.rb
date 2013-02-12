@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130211190515) do
+ActiveRecord::Schema.define(:version => 20130212183239) do
 
   create_table "following_relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -28,21 +28,24 @@ ActiveRecord::Schema.define(:version => 20130211190515) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "private",            :default => true, :null => false
   end
 
   create_table "shouts", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "content_id"
     t.string   "content_type"
+    t.boolean  "private",      :default => true, :null => false
   end
 
   add_index "shouts", ["content_id", "content_type"], :name => "index_shouts_on_content_id_and_content_type"
   add_index "shouts", ["user_id"], :name => "index_shouts_on_user_id"
 
   create_table "text_shouts", :force => true do |t|
-    t.string "body"
+    t.string  "body"
+    t.boolean "private", :default => true, :null => false
   end
 
   create_table "users", :force => true do |t|

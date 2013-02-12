@@ -17,8 +17,12 @@ class User < ActiveRecord::Base
     Timeline.new(self_and_followed_user_ids)
   end
 
-  def public_timeline
+  def full_timeline
     Timeline.new(id)
+  end
+
+  def public_timeline
+    PublicTimeline.new(Timeline.new(id))
   end
 
   def as_json options = {}

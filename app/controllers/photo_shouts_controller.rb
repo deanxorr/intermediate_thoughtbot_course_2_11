@@ -12,6 +12,6 @@ class PhotoShoutsController < ApplicationController
 
   def build_shout
     photo_shout = PhotoShout.new(params[:photo_shout])
-    current_user.shouts.build(content: photo_shout)
+    current_user.shouts.build(content: photo_shout, private: params[:text_shout][:private])
   end
 end
