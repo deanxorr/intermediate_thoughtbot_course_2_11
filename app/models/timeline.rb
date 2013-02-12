@@ -7,6 +7,10 @@ class Timeline
     Shout.where(user_id: @user_ids).reverse_chronological
   end
 
+  def as_json
+    shouts.as_json
+  end
+
   def to_partial_path
     "timelines/timeline"
   end

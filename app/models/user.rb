@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
     Timeline.new(id)
   end
 
+  def as_json options = {}
+    {
+      email: email,
+      shouts: public_timeline
+    }
+  end
+
   private
 
   def self_and_followed_user_ids
