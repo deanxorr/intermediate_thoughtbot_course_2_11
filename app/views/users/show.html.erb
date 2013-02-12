@@ -2,4 +2,8 @@
 
 <%= follow_button(@user) %>
 
-<%= render @user.public_timeline %>
+<% if current_user.can_follow? @user %>
+  <%= render @user.public_timeline %>
+<% else %>
+  <%= render @user.full_timeline %>
+<% end %>

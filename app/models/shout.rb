@@ -3,7 +3,7 @@ class Shout < ActiveRecord::Base
   belongs_to :content, polymorphic: true
   validates_associated :content
   
-  attr_accessible :content
+  attr_accessible :content, :private
 
   delegate :email, to: :user, prefix: true
 

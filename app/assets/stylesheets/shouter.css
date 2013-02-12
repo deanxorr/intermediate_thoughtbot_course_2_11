@@ -1,0 +1,43 @@
+.signin{
+  width:80%;
+  height:40px;
+  text-align:right;
+}
+
+input {
+  width:237;
+}
+
+.stream{
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.timeline{
+  width:100%;
+}
+
+.avatar{
+  display:inline-block;
+}
+
+.timeline .shout {
+  display:block;
+  height:70px;
+  border-bottom-color: #FFF;
+  border-bottom-width: 4px;
+}
+
+.shout .user_email{
+  display:inline-block;
+}
+
+.shout .shout_content{
+  display:inline-block;
+  font-weight:bold;
+}
+.shout .time{
+  font-style:italic; 
+  text-align:right;
+}
