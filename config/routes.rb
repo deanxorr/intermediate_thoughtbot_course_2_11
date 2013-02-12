@@ -4,6 +4,8 @@ Shouter::Application.routes.draw do
   end
   root to: "home#show", via: :get
 
+  get "/search" => "shouts#show"
+
   resource :dashboard, only: :show
 
   resources :users, only: :show

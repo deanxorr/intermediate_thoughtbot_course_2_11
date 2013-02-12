@@ -14,6 +14,11 @@
   <% if signed_in? %>
     Welcome <%= current_user.email %>
     <%= link_to t("sign_out"), sign_out_path, method: :delete %>
+    <%= form_tag("/search", :method => "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
   <% else %>
     <%= link_to t("register"), sign_up_path %>
     <%= link_to t("sign_in"), sign_in_path %>

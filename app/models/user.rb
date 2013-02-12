@@ -10,11 +10,15 @@ class User < ActiveRecord::Base
 
   def can_follow? user
     #user != self && !self.followed_users.include?(user)
-    self_and_user_ids.exclude? user.id
+    self_and_followed_user_ids.exclude? user.id
   end
 
   def timeline
-    Shout.where(user_id: self_and_followed_user_ids).reverse_chronological
+    Timeline.new(self_and_followed_user_ids)
+  end
+
+  def public_timeline
+    Timeline.new(id)
   end
 
   private

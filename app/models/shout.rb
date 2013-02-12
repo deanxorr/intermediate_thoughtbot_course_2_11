@@ -11,5 +11,4 @@ class Shout < ActiveRecord::Base
   def self.reverse_chronological
     order("created_at DESC")
   end
-
 end
